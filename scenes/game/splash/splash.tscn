@@ -1,7 +1,238 @@
-[gd_scene format=3 uid="uid://nfqbhqsyym0b"]
+[gd_scene load_steps=16 format=3 uid="uid://dworeb0mr0epx"]
+
+[ext_resource type="Script" path="res://scenes/game/splash/splash.gd" id="1_1uga7"]
+[ext_resource type="Texture2D" uid="uid://d4knajw8pp6ya" path="res://assets/graphics/splash/stars_med.png" id="2_tjkhj"]
+[ext_resource type="Texture2D" uid="uid://cypcxekhhpqug" path="res://assets/graphics/splash/stars_big.png" id="3_p28hq"]
+[ext_resource type="Texture2D" uid="uid://oa3fjxk5psdb" path="res://assets/graphics/splash/stars_sml.png" id="4_yjpl6"]
+[ext_resource type="Texture2D" uid="uid://b4vnyd1lors04" path="res://assets/graphics/splash/intangiblematter.png" id="5_qlw2r"]
+[ext_resource type="FontFile" uid="uid://ci7eh0f7ih554" path="res://assets/fonts/JetBrainsMono.ttf" id="6_ohyfq"]
+
+[sub_resource type="Animation" id="Animation_o7wis"]
+resource_name = "starParallax"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("big/Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2048, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8hhox"]
+resource_name = "MedStarParallax"
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("med/Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2048, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3aj31"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("big/Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2048, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("med/Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2048, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sml/Sprite2D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2048, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6t56s"]
+resource_name = "SmallStarParallax"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sml/Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2048, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l8k3q"]
+_data = {
+"BigStarParallax": SubResource("Animation_o7wis"),
+"MedStarParallax": SubResource("Animation_8hhox"),
+"RESET": SubResource("Animation_3aj31"),
+"SmallStarParallax": SubResource("Animation_6t56s")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_qcvto"]
+font = ExtResource("6_ohyfq")
+font_size = 64
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_i21ir"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(256, -512)]
+}
+
+[sub_resource type="Animation" id="Animation_ra4mx"]
+resource_name = "splash"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3, 4),
+"transitions": PackedFloat32Array(0.5, 1, 2, 1),
+"update": 0,
+"values": [Vector2(256, -512), Vector2(256, 144), Vector2(256, 144), Vector2(256, 640)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_imbcw"]
+_data = {
+"RESET": SubResource("Animation_i21ir"),
+"splash": SubResource("Animation_ra4mx")
+}
 
 [node name="splash" type="Node2D"]
+script = ExtResource("1_1uga7")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="sml" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -1)
+motion_scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/sml"]
+position = Vector2(0, 144)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_yjpl6")
+offset = Vector2(2048, 0)
+
+[node name="SmallStarParallax" type="AnimationPlayer" parent="ParallaxBackground/sml"]
+root_node = NodePath("../..")
+autoplay = "SmallStarParallax"
+libraries = {
+"": SubResource("AnimationLibrary_l8k3q")
+}
+
+[node name="med" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/med"]
+position = Vector2(0, 144)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_tjkhj")
+offset = Vector2(2048, 0)
+
+[node name="MedStarParallax" type="AnimationPlayer" parent="ParallaxBackground/med"]
+root_node = NodePath("../..")
+autoplay = "MedStarParallax"
+libraries = {
+"": SubResource("AnimationLibrary_l8k3q")
+}
+
+[node name="big" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.9, 0.9)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/big"]
+position = Vector2(0, 144)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_p28hq")
+offset = Vector2(2048, 0)
+
+[node name="BigStarParallax" type="AnimationPlayer" parent="ParallaxBackground/big"]
+root_node = NodePath("../..")
+autoplay = "BigStarParallax"
+libraries = {
+"": SubResource("AnimationLibrary_l8k3q")
+}
+
+[node name="IntangibleMatter" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/IntangibleMatter"]
+position = Vector2(256, 128)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("5_qlw2r")
+
+[node name="Label" type="Label" parent="ParallaxBackground/IntangibleMatter/Sprite2D"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -683.0
+offset_top = -256.0
+offset_right = 170.0
+offset_bottom = -172.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "IntangibleMatter"
+label_settings = SubResource("LabelSettings_qcvto")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(256, -512)
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_imbcw")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,0 +1,266 @@
+[gd_scene load_steps=11 format=3 uid="uid://pccaipeylmb"]
+
+[ext_resource type="Theme" uid="uid://bcb0fhoal7q0d" path="res://assets/themes/theme.tres" id="1_vi7jb"]
+[ext_resource type="Script" path="res://scenes/game/ui/menus/main_menu.gd" id="2_wb6lu"]
+[ext_resource type="PackedScene" uid="uid://bna3a48kkq3bh" path="res://scenes/game/ui/menus/menu_components/options_menu_options.tscn" id="3_luepe"]
+[ext_resource type="PackedScene" uid="uid://c8myf2c6rpn8g" path="res://scenes/game/ui/menus/menu_components/main_menu_buttons.tscn" id="3_u2nu2"]
+[ext_resource type="PackedScene" uid="uid://b8sa71onakaws" path="res://scenes/game/ui/menus/menu_components/menu_credits.tscn" id="4_s3wjf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b14wj"]
+font_size = 24
+
+[sub_resource type="Animation" id="Animation_cccpw"]
+resource_name = "DisplayExtraMenu"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main_menu_buttons:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-256, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExtraMenus:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(256, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("main_menu_buttons:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ExtraMenus:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3qydd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main_menu_buttons:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExtraMenus:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(256, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("main_menu_buttons:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ExtraMenus:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2abki"]
+resource_name = "HideExtraMenu"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("main_menu_buttons:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-256, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ExtraMenus:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(256, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("main_menu_buttons:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ExtraMenus:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_raeeb"]
+_data = {
+"DisplayExtraMenu": SubResource("Animation_cccpw"),
+"HideExtraMenu": SubResource("Animation_2abki"),
+"RESET": SubResource("Animation_3qydd")
+}
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vi7jb")
+script = ExtResource("2_wb6lu")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Game Title"
+label_settings = SubResource("LabelSettings_b14wj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainPanel" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GameTextureDisplay" type="TextureRect" parent="VBoxContainer/MainPanel"]
+editor_description = "Displays something from the game, such as a character, to show the player what they'll be getting into"
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MenuDisplay" type="Control" parent="VBoxContainer/MainPanel"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MenuDisplayOptionsContainer" type="Control" parent="VBoxContainer/MainPanel/MenuDisplay"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="main_menu_buttons" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer" instance=ExtResource("3_u2nu2")]
+layout_mode = 1
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="ExtraMenus" type="Control" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 256.0
+offset_right = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menu_credits" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/ExtraMenus" instance=ExtResource("4_s3wjf")]
+visible = false
+layout_mode = 1
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="options_menu_options" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/ExtraMenus" instance=ExtResource("3_luepe")]
+layout_mode = 1
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer"]
+libraries = {
+"": SubResource("AnimationLibrary_raeeb")
+}

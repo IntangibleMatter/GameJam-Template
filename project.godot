@@ -8,6 +8,16 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Node",
+"class": &"GameScene",
+"language": &"GDScript",
+"path": "res://scenes/game_scene.gd"
+}]
+_global_script_class_icons={
+"GameScene": ""
+}
+
 [application]
 
 config/name="GameJam Template"

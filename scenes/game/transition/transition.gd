@@ -9,6 +9,7 @@ func _ready():
 
 
 func transition(dir: String) -> void:
+	print("transitioning %s"%dir)
 	match dir:
 		"in":
 			anim_player.play("trans_in")
