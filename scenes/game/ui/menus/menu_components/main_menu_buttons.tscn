@@ -5,8 +5,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,94 +16,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayButtonContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 6
-
-[node name="SpacingLabelStart" type="Label" parent="VBoxContainer/PlayButtonContainer"]
+[node name="SpacingLabelStart" type="Label" parent="HBoxContainer"]
 editor_description = "Adds a bit of padding to the edges of the volume controls
 "
 layout_mode = 2
 text = " "
 
-[node name="PlayButton" type="Button" parent="VBoxContainer/PlayButtonContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PlayButton" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 6
 text = "Play"
 
-[node name="SpacingLabelEnd" type="Label" parent="VBoxContainer/PlayButtonContainer"]
-editor_description = "Adds a bit of padding to the edges of the volume controls
-"
-layout_mode = 2
-text = " "
-
-[node name="OptionsButtonContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 6
-
-[node name="SpacingLabelStart" type="Label" parent="VBoxContainer/OptionsButtonContainer"]
-editor_description = "Adds a bit of padding to the edges of the volume controls
-"
-layout_mode = 2
-text = " "
-
-[node name="OptionsButton" type="Button" parent="VBoxContainer/OptionsButtonContainer"]
+[node name="OptionsButton" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 6
 text = "Options"
 
-[node name="SpacingLabelEnd" type="Label" parent="VBoxContainer/OptionsButtonContainer"]
-editor_description = "Adds a bit of padding to the edges of the volume controls
-"
-layout_mode = 2
-text = " "
-
-[node name="CreditsButtonContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 6
-
-[node name="SpacingLabelStart" type="Label" parent="VBoxContainer/CreditsButtonContainer"]
-editor_description = "Adds a bit of padding to the edges of the volume controls
-"
-layout_mode = 2
-text = " "
-
-[node name="CreditsButton" type="Button" parent="VBoxContainer/CreditsButtonContainer"]
+[node name="CreditsButton" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 6
 text = "Credits"
 
-[node name="SpacingLabelEnd" type="Label" parent="VBoxContainer/CreditsButtonContainer"]
-editor_description = "Adds a bit of padding to the edges of the volume controls
-"
-layout_mode = 2
-text = " "
-
-[node name="QuitButtonContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 6
-
-[node name="SpacingLabelStart" type="Label" parent="VBoxContainer/QuitButtonContainer"]
-editor_description = "Adds a bit of padding to the edges of the volume controls
-"
-layout_mode = 2
-text = " "
-
-[node name="QuitButton" type="Button" parent="VBoxContainer/QuitButtonContainer"]
+[node name="QuitButton" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 6
 text = "Quit
 "
 
-[node name="SpacingLabelEnd" type="Label" parent="VBoxContainer/QuitButtonContainer"]
+[node name="SpacingLabelEnd" type="Label" parent="HBoxContainer"]
 editor_description = "Adds a bit of padding to the edges of the volume controls
 "
 layout_mode = 2

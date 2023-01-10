@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dworeb0mr0epx"]
+[gd_scene load_steps=17 format=3 uid="uid://dworeb0mr0epx"]
 
 [ext_resource type="Script" path="res://scenes/game/splash/splash.gd" id="1_1uga7"]
 [ext_resource type="Texture2D" uid="uid://d4knajw8pp6ya" path="res://assets/graphics/splash/stars_med.png" id="2_tjkhj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://oa3fjxk5psdb" path="res://assets/graphics/splash/stars_sml.png" id="4_yjpl6"]
 [ext_resource type="Texture2D" uid="uid://b4vnyd1lors04" path="res://assets/graphics/splash/intangiblematter.png" id="5_qlw2r"]
 [ext_resource type="FontFile" uid="uid://ci7eh0f7ih554" path="res://assets/fonts/JetBrainsMono.ttf" id="6_ohyfq"]
+[ext_resource type="AudioStream" uid="uid://dpdcq1e75bhly" path="res://assets/sfx/splash/splash_wind.wav" id="7_cuu4e"]
 
 [sub_resource type="Animation" id="Animation_o7wis"]
 resource_name = "starParallax"
@@ -125,6 +126,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(256, -512)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground/IntangibleMatter/Sprite2D/WindSoundPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_ra4mx"]
 resource_name = "splash"
@@ -140,6 +153,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.5, 1, 2, 1),
 "update": 0,
 "values": [Vector2(256, -512), Vector2(256, 144), Vector2(256, 144), Vector2(256, 640)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground/IntangibleMatter/Sprite2D/WindSoundPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_imbcw"]
@@ -224,6 +249,13 @@ text = "IntangibleMatter"
 label_settings = SubResource("LabelSettings_qcvto")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="WindSoundPlayer" type="AudioStreamPlayer2D" parent="ParallaxBackground/IntangibleMatter/Sprite2D"]
+position = Vector2(-682.667, -341.333)
+scale = Vector2(2.66667, 2.66667)
+stream = ExtResource("7_cuu4e")
+volume_db = -3.0
+bus = &"sfx"
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(256, -512)

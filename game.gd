@@ -41,9 +41,6 @@ func change_scene(scene: String, scene_data: Dictionary = {} ,trans := SCENE_TRA
 	print(scn)
 	print(curr_scene)
 	
-	
-	print("spawned")
-	print(curr_scene)
 	match trans:
 		SCENE_TRANSITION_TYPE.NORMAL:
 			transition.transition("in")

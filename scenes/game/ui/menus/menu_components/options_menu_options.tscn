@@ -1,10 +1,15 @@
-[gd_scene format=3 uid="uid://bna3a48kkq3bh"]
+[gd_scene load_steps=2 format=3 uid="uid://bna3a48kkq3bh"]
+
+[ext_resource type="Script" path="res://scenes/game/ui/menus/menu_components/options_menu_options.gd" id="1_2iwul"]
 
 [node name="options_menu_options" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2iwul")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -41,6 +46,9 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+max_value = 1.0
+step = 0.1
+value = 1.0
 
 [node name="SoundsVolume" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -59,12 +67,11 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+max_value = 1.0
+step = 0.1
+value = 1.0
 
-[node name="SoundsVolume2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="BackButton" type="Button" parent="HBoxContainer/VBoxContainer/SoundsVolume2"]
+[node name="BackButton" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -75,3 +82,5 @@ editor_description = "Adds a bit of padding to the edges of the volume controls
 "
 layout_mode = 2
 text = " "
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

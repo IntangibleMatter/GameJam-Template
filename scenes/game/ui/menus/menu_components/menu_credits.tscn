@@ -1,10 +1,15 @@
-[gd_scene format=3 uid="uid://b8sa71onakaws"]
+[gd_scene load_steps=2 format=3 uid="uid://b8sa71onakaws"]
+
+[ext_resource type="Script" path="res://scenes/game/ui/menus/menu_components/menu_credits.gd" id="1_lh35i"]
 
 [node name="menu_credits" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lh35i")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -37,3 +42,5 @@ editor_description = "Adds a bit of padding to the edges of the volume controls
 layout_mode = 2
 size_flags_vertical = 5
 text = " "
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
