@@ -289,7 +289,7 @@ theme = ExtResource("1_vi7jb")
 script = ExtResource("2_wb6lu")
 
 [node name="Background" type="TextureRect" parent="."]
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -297,7 +297,7 @@ grow_vertical = 2
 metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
@@ -308,37 +308,29 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Title" type="Label" parent="VBoxContainer"]
-offset_right = 496.0
-offset_bottom = 28.0
+layout_mode = 2
 text = "Game Title"
 label_settings = SubResource("LabelSettings_b14wj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MainPanel" type="HBoxContainer" parent="VBoxContainer"]
-offset_top = 32.0
-offset_right = 496.0
-offset_bottom = 272.0
+layout_mode = 2
 size_flags_vertical = 3
 
 [node name="GameTextureDisplay" type="TextureRect" parent="VBoxContainer/MainPanel"]
 editor_description = "Displays something from the game, such as a character, to show the player what they'll be getting into"
-offset_right = 246.0
-offset_bottom = 240.0
+layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="MenuDisplay" type="Control" parent="VBoxContainer/MainPanel"]
 clip_contents = true
-layout_mode = 3
-anchors_preset = 0
-offset_left = 250.0
-offset_right = 496.0
-offset_bottom = 240.0
+layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="MenuDisplayOptionsContainer" type="Control" parent="VBoxContainer/MainPanel/MenuDisplay"]
 clip_contents = true
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -346,7 +338,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MainMenuButtons" type="Control" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer"]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -356,7 +348,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons"]
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 246.0
@@ -367,21 +359,15 @@ grow_vertical = 2
 [node name="SpacingLabelStart" type="Label" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons/HBoxContainer"]
 editor_description = "Adds a bit of padding to the edges of the volume controls
 "
-offset_top = 110.0
-offset_right = 4.0
-offset_bottom = 130.0
+layout_mode = 2
 text = " "
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons/HBoxContainer"]
-offset_left = 8.0
-offset_right = 238.0
-offset_bottom = 240.0
+layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="PlayButton" type="Button" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons/HBoxContainer/VBoxContainer"]
-offset_top = 16.0
-offset_right = 230.0
-offset_bottom = 41.0
+layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 6
 focus_neighbor_bottom = NodePath("../OptionsButton")
@@ -390,9 +376,8 @@ mouse_default_cursor_shape = 2
 text = "Play"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons/HBoxContainer/VBoxContainer"]
-offset_top = 77.0
-offset_right = 230.0
-offset_bottom = 102.0
+unique_name_in_owner = true
+layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 6
 focus_neighbor_top = NodePath("../PlayButton")
@@ -402,9 +387,8 @@ focus_previous = NodePath("../PlayButton")
 text = "Options"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons/HBoxContainer/VBoxContainer"]
-offset_top = 138.0
-offset_right = 230.0
-offset_bottom = 163.0
+unique_name_in_owner = true
+layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 6
 focus_neighbor_top = NodePath("../OptionsButton")
@@ -414,9 +398,7 @@ focus_previous = NodePath("../OptionsButton")
 text = "Credits"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons/HBoxContainer/VBoxContainer"]
-offset_top = 199.0
-offset_right = 230.0
-offset_bottom = 224.0
+layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 6
 focus_neighbor_top = NodePath("../CreditsButton")
@@ -427,14 +409,11 @@ text = "Quit
 [node name="SpacingLabelEnd" type="Label" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons/HBoxContainer"]
 editor_description = "Adds a bit of padding to the edges of the volume controls
 "
-offset_left = 242.0
-offset_top = 110.0
-offset_right = 246.0
-offset_bottom = 130.0
+layout_mode = 2
 text = " "
 
 [node name="ExtraMenus" type="Control" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer"]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -446,8 +425,10 @@ grow_vertical = 2
 
 [node name="menu_credits" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/ExtraMenus" instance=ExtResource("4_s3wjf")]
 visible = false
+layout_mode = 1
 
 [node name="options_menu_options" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/ExtraMenus" instance=ExtResource("3_luepe")]
+layout_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer"]
 autoplay = "RESET"
@@ -455,7 +436,9 @@ libraries = {
 "": SubResource("AnimationLibrary_raeeb")
 }
 
+[connection signal="pressed" from="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons/HBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons/HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="return_to_menu" from="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/ExtraMenus/menu_credits" to="." method="_on_menu_credits_return_to_menu"]
 [connection signal="return_to_menu" from="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/ExtraMenus/options_menu_options" to="." method="_on_options_menu_options_return_to_menu"]

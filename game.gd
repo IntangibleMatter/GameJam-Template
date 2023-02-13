@@ -39,7 +39,6 @@ func change_scene(scene: String, scene_data: Dictionary = {} ,trans := SCENE_TRA
 	curr_scene_hold.add_child(scn)
 	curr_scene = scn
 	print(scn)
-	print(curr_scene)
 	
 	match trans:
 		SCENE_TRANSITION_TYPE.NORMAL:

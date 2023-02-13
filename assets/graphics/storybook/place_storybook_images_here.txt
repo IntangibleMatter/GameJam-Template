@@ -1,0 +1,3 @@
+Place the images in the storybook here!
+
+Title should be formatted as <image_index>.png

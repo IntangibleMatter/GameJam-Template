@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxjl464eiomxc"]
+
+[ext_resource type="Script" path="res://scenes/game/storybook/storybook.gd" id="1_twfme"]
+
+[node name="Storybook" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_twfme")
+first_game_scene = "res://scenes/game/splash/splash.tscn"
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BookImages" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 512.0
+offset_bottom = 208.0
+
+[node name="BookText" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -72.0
+offset_right = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+visible_characters_behavior = 1
+
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_neighbor_top = NodePath("../BackButton")
+focus_neighbor_right = NodePath("../BackButton")
+focus_next = NodePath("../BackButton")
+text = "Next
+"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -40.0
+offset_right = 56.0
+offset_bottom = -8.0
+grow_vertical = 0
+focus_neighbor_left = NodePath("../NextButton")
+focus_neighbor_bottom = NodePath(".")
+focus_previous = NodePath("../NextButton")
+text = "Back"
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
