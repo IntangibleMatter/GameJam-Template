@@ -87,7 +87,6 @@ func _on_next_button_pressed() -> void:
 
 
 func _on_back_button_pressed():
-	print("asdkjh")
 	storybook_index -= 1
 	if storybook_index >= 0:
 		display_current_storybook_page()

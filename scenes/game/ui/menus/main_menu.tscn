@@ -270,6 +270,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(246, 240)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MainMenuButtons/HBoxContainer:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_raeeb"]
 _data = {
@@ -348,13 +360,15 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 246.0
 offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="SpacingLabelStart" type="Label" parent="VBoxContainer/MainPanel/MenuDisplay/MenuDisplayOptionsContainer/MainMenuButtons/HBoxContainer"]
 editor_description = "Adds a bit of padding to the edges of the volume controls
@@ -370,8 +384,10 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 6
+focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_bottom = NodePath("../OptionsButton")
 focus_next = NodePath("../OptionsButton")
+focus_previous = NodePath("../QuitButton")
 mouse_default_cursor_shape = 2
 text = "Play"
 
@@ -402,6 +418,8 @@ layout_mode = 2
 size_flags_horizontal = 7
 size_flags_vertical = 6
 focus_neighbor_top = NodePath("../CreditsButton")
+focus_neighbor_bottom = NodePath("../PlayButton")
+focus_next = NodePath("../PlayButton")
 focus_previous = NodePath("../CreditsButton")
 text = "Quit
 "
