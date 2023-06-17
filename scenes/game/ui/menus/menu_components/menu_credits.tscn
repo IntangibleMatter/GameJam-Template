@@ -36,6 +36,12 @@ layout_mode = 2
 size_flags_vertical = 10
 text = "Back"
 
+[node name="SpacingLabelEnd" type="Label" parent="HBoxContainer/VBoxContainer"]
+editor_description = "Adds a bit of padding to the edges of the volume controls
+"
+layout_mode = 2
+text = " "
+
 [node name="SpacingLabelEnd" type="Label" parent="HBoxContainer"]
 editor_description = "Adds a bit of padding to the edges of the volume controls
 "
