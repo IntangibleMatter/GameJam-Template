@@ -1,5 +1,5 @@
 class_name GameScene
-extends Node
+extends CanvasItem # limits it to 2D and Control, I'm sorry
 
 signal done(done_data: Dictionary)
 
