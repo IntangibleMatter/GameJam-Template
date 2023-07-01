@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b6egvlmsxb505" path="res://scenes/game/transition/transition.tscn" id="2_cdtwp"]
 [ext_resource type="PackedScene" uid="uid://c86exeql0vhpm" path="res://scenes/game/ui/menus/pause_menu.tscn" id="3_wdcon"]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" groups=["game"]]
 script = ExtResource("1_by6r6")
 
 [node name="ObjectHolder" type="Node" parent="."]
@@ -14,6 +14,15 @@ script = ExtResource("1_by6r6")
 [node name="Transition" parent="." instance=ExtResource("2_cdtwp")]
 
 [node name="GameMenus" type="CanvasLayer" parent="."]
+layer = 100
 
 [node name="PauseMenu" parent="GameMenus" instance=ExtResource("3_wdcon")]
-visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 512.0
+offset_bottom = 288.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="done" from="GameMenus/PauseMenu" to="." method="handle_scene_done"]

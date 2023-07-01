@@ -173,7 +173,7 @@ _data = {
 "splash": SubResource("Animation_ra4mx")
 }
 
-[node name="splash" type="Node2D"]
+[node name="splash" type="Node2D" groups=["nopause"]]
 script = ExtResource("1_1uga7")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]

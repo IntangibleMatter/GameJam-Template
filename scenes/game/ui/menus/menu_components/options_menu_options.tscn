@@ -32,6 +32,8 @@ size_flags_horizontal = 3
 [node name="MusicVolume" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../BackButton")
+focus_neighbor_bottom = NodePath("../SoundsVolume")
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MusicVolume"]
 layout_mode = 2
@@ -53,6 +55,8 @@ value = 1.0
 [node name="SoundsVolume" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../MusicVolume")
+focus_neighbor_bottom = NodePath("../BackButton")
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/SoundsVolume"]
 layout_mode = 2
@@ -75,6 +79,8 @@ value = 1.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+focus_neighbor_top = NodePath("../SoundsVolume")
+focus_neighbor_bottom = NodePath("../MusicVolume")
 text = "Back"
 
 [node name="SpacingLabelEnd" type="Label" parent="HBoxContainer/VBoxContainer"]
