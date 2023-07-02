@@ -207,6 +207,8 @@ colors = PackedColorArray(0, 0, 0, 1, 0.40625, 0.40625, 0.40625, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_jxbkm"]
 gradient = SubResource("Gradient_gyho7")
+width = 512
+height = 512
 fill_from = Vector2(1, 0)
 fill_to = Vector2(0, 1)
 
@@ -232,8 +234,6 @@ material = SubResource("ShaderMaterial_v6elk")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 512.0
-offset_bottom = 288.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
