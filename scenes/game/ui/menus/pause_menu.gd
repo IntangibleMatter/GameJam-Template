@@ -50,5 +50,4 @@ func _on_resume_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	emit_signal("done", {"scene": "res://scenes/game/ui/menus/main_menu.tscn"})
-	print("WEDIOFJFLS")
 	hide_menu()
